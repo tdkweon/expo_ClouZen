@@ -1,0 +1,126 @@
+[ Expo @cmd ]
+1. npm install --global expo-cli
+2. expo init Project-name
+* Test => expo go /snack
+3. RUN => npm start
+
+[ 단점 ]
+1. 특정 기능 사용 불가 ex) bluetooth
+2. 기본 default 사이즈 (15~20MB)
+3. Background audio/alarm 불가
+
+[ 실행 ] 
+
+
+[ 모듈 ] 
+expo install expo-app-loading
+expo install expo-font  # default icons 사용을 위함
+expo install expo-asset # image 로딩
+
+.Navigation (https://reactnavigation.org/docs/getting-started)
+npm install @react-navigation/native
+expo install react-native-screens react-native-safe-area-context 
+expo install react-native-gesture-handler react-native-reanimated @react-native-community/masked-view
+npm install @react-navigation/stack
+npm install @react-navigation/bottom-tabs
+
+. sytle / appearance (https://docs.expo.dev/versions/latest/react-native/appearance/)
+npm i styled-components
+expo install react-native-appearance
+
+. checking input (login 등)
+npm install react-hook-form
+
+[ DynamicTabView ]
+npm install react-native-dynamic-tab-view
+// Warning: componentWillReceiveProps has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for detail
+// => npx react-codemod rename-unsafe-lifecycles
+// NOT working !!!
+
+[ QRScan ]######
+expo install expo-barcode-scanner
+npm i react-native-barcode-mask -s
+
+[React Query] https://react-query.tanstack.com/
+* fetch data, loading state, caching, infinite loop
+npm i react-query
+
+[CheckBox] * npm ERR ERESOLVE unable to resolve dependency tree (https://www.youtube.com/watch?v=SJQuAspVNG4)
+# npm install @react-native-community/checkbox --save --legacy-peer-deps
+# for iOS : https://github.com/react-native-checkbox/react-native-checkbox
+expo install expo-checkbox
+
+[ Realm ]
+npm install realm
+* Error => https://www.mongodb.com/community/forums/t/missin-realm-constructor-error/166726/23
+           https://www.mongodb.com/developer/products/realm/using-expo-realm-expo-dev-client/
+           
+[Network]
+expo install @react-native-community/netinfo
+
+[ 만약 필요하면 Async Storage ]
+expo install @react-native-async-storage/async-storage
+https://react-native-async-storage.github.io/async-storage/docs/usage/
+
+[ Warning ] 
+1. Module not found: Error: Can't resolve '@unimodules/react-native-adapter' in 'D:\projects\react_native\Expo\ClouZen\node_modules\react-native-appearance\lib\module\web'
+    npm install @unimodules/react-native-adapter --save
+
+[ Async Storage ]
+npm install @react-native-async-storage/async-storage
+
+[ Open Settings, Android ONLY ]
+expo install expo-intent-launcher
+
+[ CardView ]
+npm install --save prop-types
+npm install expo-linear-gradient
+
+[ Menu ]
+react-native-material-menu
+
+
+[Movie] //안드로이드 애뮬레이터에서는 재생이 안되었지만 실제 기기에서는 잘 잘동하였습니다.
+
+[Movie] (https://aboutreact.com/react-native-video/)
+npm install --save react-native-video
+npm install --save react-native-media-controls
+npm install --save react-native-slider
+
+##############################################
+[Debugging - chrome]
+https://www.youtube.com/watch?v=Tzk7VP7ACAQ
+
+1. Emulator -> ctrl+M -> Debug 
+2. http://localhost:19000/debugger-ui/ => 오른쪽 마우스에서 Inspect 선택
+3. project folder 설정
+
+[Debugging - ]
+https://github.com/jhen0409/react-native-debugger#installation
+
+[Simulator Info]
+expo install expo-device
+
+##############################################
+[ Study ]
+https://joylee-developer.tistory.com/140?category=991815
+
+
+
+
+[ Apple 개발자 ID ]
+Email: apple@clouzen.kr
+PW: CZapl!5370
+
+[ Expo 개발자 ID ]
+https://expo.io/
+user: ClouZen (tdkweon)
+Email: expo@clouzen.kr (tdkweon@gmail.com)
+PW: CZexpo!5370 (!cygnus67)
+
+[Build]
+https://medium.com/duckuism/expo-react-native-create-app-%EC%9C%BC%EB%A1%9C-%EC%95%B1%EC%8A%A4%ED%86%A0%EC%96%B4%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-d1c9af5c8802
+-c 옵션을 입력하면 캐시를 삭제하므로 기존의 인증서 정보를 지운 후 다시 입력
+
+expo build:android -t apk  (stand-alone file = apk)
+expo build:ios -t archive  (stand-alone file = ipa)
